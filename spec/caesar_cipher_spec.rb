@@ -44,5 +44,23 @@ describe CaesarCipher do
         end
       end
     end
+    context 'when shift is 2' do
+      let(:shift) { 2 }
+      context "and 'Hello World!' is given as phrase" do
+        it "returns 'Jgnnq Yqtnf!" do
+          phrase = 'Hello World!'
+          expect(CaesarCipher.cipher(phrase, shift)).to eq('Jgnnq Yqtnf!')
+        end
+      end
+      context "and 'I have 5 fingers on each hand' is given as a phrase" do
+        it "returns 'K jcxg 5 hkpigtu qp gcej jcpf'" do
+          phrase = 'I have 5 fingers on each hand'
+          out_phrase = 'K jcxg 5 hkpigtu qp gcej jcpf'
+          expect(CaesarCipher.cipher(phrase, shift)).to eq(out_phrase)
+        end
+      end
+    end
+  end
+  describe '.decipher' do
   end
 end
